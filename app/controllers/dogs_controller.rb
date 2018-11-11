@@ -9,7 +9,20 @@ class DogsController < ApplicationController
     end
     
     def create
-        render plain: params[:dog].inspect
+        @dog = Dog.new(dog_params)
+        
+        @dog.save
+        redirect_to @dog
+    end
+    
+    def show
+        @dog = Dog.find(params[:id])
     end
     
 end
+
+
+private
+    def dog_params
+       params.require(:dog).permit(:name, :sex, :age, :bio) 
+    end
