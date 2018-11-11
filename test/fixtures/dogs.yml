@@ -4,10 +4,10 @@ one:
   name: MyString
   sex: MyString
   age: 1
-  bio: MyText
+  bio: MyString
 
 two:
   name: MyString
   sex: MyString
   age: 1
-  bio: MyText
+  bio: MyString
