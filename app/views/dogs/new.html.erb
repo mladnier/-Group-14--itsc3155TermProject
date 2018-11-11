@@ -1,1 +1,28 @@
 <h1>Creating New Dog Profile!</h1>
+
+<%= form_for :dog, url: dogs_path do |f| %>
+  <p>
+    <%= f.label :Name %><br>
+    <%= f.text_field :text %>
+  </p>
+ 
+  <p>
+    <%= f.label :Sex %><br>
+    <%= f.select :gender,  ["Not telling","Male", "Female"] %>
+  </p>
+ 
+ <p>
+    <%= f.label :Age %><br>
+    <%= f.text_field :int %>
+  </p>
+  
+  <p>
+    <%= f.label :Bio %><br>
+    <%= f.text_field :text %>
+  </p>
+  
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
