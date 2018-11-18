@@ -10,15 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_18_201142) do
+ActiveRecord::Schema.define(version: 2018_11_18_212145) do
 
   create_table "dogs", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
     t.string "name"
     t.string "sex"
     t.integer "age"
-    t.string "bio"
+    t.text "bio"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   create_table "matches", force: :cascade do |t|
