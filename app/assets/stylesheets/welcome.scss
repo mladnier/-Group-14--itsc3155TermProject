@@ -1,3 +1,28 @@
-// Place all the styles related to the Welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+    font-size: 56px;
+    color: white;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+    
+}
+
+h2{
+    font-size: 32px;
+    color: white;
+    font-style: italic;
+    text-align: center;
+}
+
+img{
+    horizontal: middle;
+}
+
+body{
+    background-color: brown
+}
+
+A:link{
+    font-size: 25px;
+    float: right;
+}
