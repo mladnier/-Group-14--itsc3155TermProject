@@ -21,6 +21,23 @@ class DogsController < ApplicationController
         @dog = Dog.find(params[:id])
     end
     
+    def edit
+        @article = Dog.find(params[:id])
+    end
+    
+    def update
+        @article = Dog.find(params[:id])
+        
+        if @dog.update(dog_params)
+            redirect_to @dog
+        else
+            render 'edit'
+        end
+    end
+    
+    
+    
+    
 end
 
 
