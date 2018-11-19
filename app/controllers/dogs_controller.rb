@@ -35,7 +35,12 @@ class DogsController < ApplicationController
         end
     end
     
-    
+    def destroy
+        @dog = Dog.find(params[:id])
+        @dog.destroy
+        
+        redirect_to dogs_path
+    end
     
     
 end
