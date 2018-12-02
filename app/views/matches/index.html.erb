@@ -1,5 +1,5 @@
-<h2>Match</h2>
-<p>WE NEED TO HAVE THIS START DISPLAYING MATCHES FROM THE DATABASE</p>
+<h2>You are being Matched!</h2>
+
 
 <h1> YOU HAVE A Possible MATCH!</h1>
 
@@ -26,31 +26,24 @@
     
     
 </p> 
+<p> <%= link_to "Add match", dog_matches_path(:id => @mycurrentmatch.id), :method => :post %><p>
+<p><%= link_to 'Find a different dogger friend', dog_matches_path(:current_user_id) %></p>
 
-
-<%= form_for([@dog, @dog.matches.build]) do |f| %>
-  <p>
-      
-    <%= f.submit %>
-  </p>
-<% end %>
-
-<p><%= link_to 'I WOULD LIKE TO MATCH', dog_match_path(:id => :mymatchid) %></p>
-<p><%= link_to 'Find a new doggy friend', dog_matches_path(:current_user_id) %></p>
-<%= link_to 'Back', dogs_index_path %>
-
-<h1>All your matches!</h1>
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
- 
+ <p>
   <% @matches.each do |matc| %>
+   <p hidden><%= @dog = Dog.find(matc.dog_id) %></p>
+  <p hidden><%= @tempid = matc.id %></p>
     <tr>
-      <td><%= matc.dog_id %></td>
-      
-      
+       
+      <td><%= @dog.name %></td>
+      <td><%= link_to 'Chat', new_dog_match_chat_path(:match_id => @tempid) %></td>
+      <td><%= link_to 'Unmatch',
+                                  dog_match_path(:id => @tempid),
+                                  method: :delete,
+                                  data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     </tr>
   <% end %>
+  
 </table>
+</p>

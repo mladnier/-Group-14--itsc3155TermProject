@@ -1,7 +1,7 @@
 class DogsController < ApplicationController
     
     def index
-        @current_user = Dog.find_by_id(session[:current_user_id])
+         
     end
     
     def new

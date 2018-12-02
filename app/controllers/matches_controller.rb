@@ -6,18 +6,15 @@ class MatchesController < ApplicationController
        @mymatchid = @mycurrentmatch.id
     end
     
-    def new
-        @match = Match.new
-    end
     
     def create
-     
-        @dog = Dog.find(session[:current_user_id])
+        @dog = Dog.find(params[:id])
         @match = @dog.matches.create(match_params)
         @match.save
-        redirect_to dog_matches_path(:current_user_id)
+        redirect_to dog_matches_path(params[:dog_id])
+        
+        Rails.logger.info(@match.errors.inspect) 
     
-      
         # @match = Match.new(params[:mycurrentmatchId])
         # if @match.save
         #     redirect_to @match
@@ -26,7 +23,17 @@ class MatchesController < ApplicationController
         # end
     end
     
+    def destroy
+        @dog = Dog.find(params[:id])
+        @match = @dog.matches.find(params[:id])
+        @matct.destroy
+        Rails.logger.info(@match.errors.inspect) 
+        redirect_to dog_matches_path(params[:dog_id])
+     end
+    
      def show
+       
+        @match = Match.find(params[:id])
         # @match = Match.find_by_id(params[:id])
         # @matcheddog = Dog.find_by_id(params[:id => @mymatchid])
      end
@@ -34,8 +41,8 @@ class MatchesController < ApplicationController
 
 private
     def match_params
-        params.require(:match).permit(:dog_id => @mymatchid)
-    end
+        params.permit(:dog_id, :id)
+    end 
+   
 end
-
 
