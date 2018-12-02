@@ -26,19 +26,22 @@
     
     
 </p> 
-<p> <%= link_to "Add match", dog_matches_path(:id => @mycurrentmatch.id), :method => :post %><p>
+<p> <%= link_to "Add match", dog_matches_path(:dog_id => @mycurrentmatch.id), :method => :post %><p>
 <p><%= link_to 'Find a different dogger friend', dog_matches_path(:current_user_id) %></p>
 
  <p>
-  <% @matches.each do |matc| %>
-   <p hidden><%= @dog = Dog.find(matc.dog_id) %></p>
-  <p hidden><%= @tempid = matc.id %></p>
+  <% @matchids.each do |f| %>
+  
+  <%= @mat = Match.find_by_id(f) %>
+  
+  <%= @dog = Dog.find_by_id(@mat.dog_id) %>
+
+  <%= @tempid = f %>
     <tr>
-       
       <td><%= @dog.name %></td>
-      <td><%= link_to 'Chat', new_dog_match_chat_path(:match_id => @tempid) %></td>
+      <td><%= link_to 'Chat', new_dog_match_chat_path(:match_id => f) %></td>
       <td><%= link_to 'Unmatch',
-                                  dog_match_path(:id => @tempid),
+                                  dog_match_path(:id => f),
                                   method: :delete,
                                   data: { confirm: 'Are you sure?' } %></td>
     </tr>

@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   end
   
   def create
-    
     @dog = Dog.find_by(email: params[:session][:email].downcase)
     if @dog && @dog.authenticate(params[:session][:password])
       log_in @dog
@@ -15,7 +14,11 @@ class SessionsController < ApplicationController
   
   end
   
+  
+  
   def destroy
+    log_out
+    redirect_to root_url
   end
 end
 

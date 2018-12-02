@@ -1,14 +1,16 @@
 class MatchesController < ApplicationController
     
     def index
-       @matches = Match.all
-       @mycurrentmatch = Dog.find(1+rand(Dog.count))
+       @mycurrentmatch = Dog.find_by_id(1+rand(Dog.count))
        @mymatchid = @mycurrentmatch.id
+       @currentdog = Dog.find_by(@current_user_id)
+       @matches = @currentdog.matches
+       @matchids = @currentdog.match_ids
     end
     
     
     def create
-        @dog = Dog.find(params[:id])
+        @dog = Dog.find_by(@current_user_id)
         @match = @dog.matches.create(match_params)
         @match.save
         redirect_to dog_matches_path(params[:dog_id])
@@ -24,9 +26,9 @@ class MatchesController < ApplicationController
     end
     
     def destroy
-        @dog = Dog.find(params[:id])
-        @match = @dog.matches.find(params[:id])
-        @matct.destroy
+        @dog = Dog.find_by(@current_user_id)
+        @match = @dog.matches.find(@matchids)
+        @match.destroy
         Rails.logger.info(@match.errors.inspect) 
         redirect_to dog_matches_path(params[:dog_id])
      end

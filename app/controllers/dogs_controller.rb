@@ -9,16 +9,19 @@ class DogsController < ApplicationController
     end
     
     def create
-       
         @dog = Dog.new(dog_params)
         
-        @dog.save
-        redirect_to @dog
+       if @dog.save
+           log_in @dog
+           flash[:sucess] = "Welcome to Doggr!"
+           redirect_to dogs_path
+       else 
+           render 'new'
+       end
     end
     
     def show
         @dog = Dog.find(params[:id])
-        
     end
     
 end
