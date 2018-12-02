@@ -1,4 +1,5 @@
 class Dog < ApplicationRecord
+  has_many :matches, dependent: :destroy
   before_save { email.downcase! }
   
   validates :name, presence: true, length: { maximum: 50 }

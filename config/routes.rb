@@ -8,7 +8,10 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
  
  resources :dogs do
-     resources :matches
+     resources :matches do
+         resources :chats
+     end
+                        
  end
  
 
