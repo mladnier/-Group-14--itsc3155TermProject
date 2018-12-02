@@ -1,5 +1,41 @@
-<h1>Welcome to Doggr</h1>
-<h2>The Location to find the best Doggy play dates</h2>
+<!DOCTYPE html>
+<html>
 
-<p>If you are a returning user please, <%= link_to 'Login!', login_path %></p>
-<p>If it's your first time, <%= link_to 'Create Dog account', new_dog_path %></p>
+<head>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top  bg-light">
+            <a class="navbar-brand" href="index.html"><img src="images/dog.png">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarList" aria-controls="navbarList" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarList">
+                <div class="navbar-nav ml-auto align-items-end">
+                    <a class="nav-item nav-link active" href="index.html">Home<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="people.html">People</a>
+                    <a class="nav-item nav-link" href="tools.html">Tools</a>
+                    <a class="nav-item nav-link" href="gallery.html">Gallery</a>
+                </div>
+            </div>
+        </nav>
+    <header>
+        
+    </header>
+    <div class="container">
+    <h2>The Location to find the best Doggy play dates</h2>
+
+    <p>If you are a returning user please,
+        <%=link_to 'Login!', login_path %>
+    </p>
+    <p>If it's your first time,
+        <%=link_to 'Create Dog account', new_dog_path %>
+    </p>
+    </div>
+    
+
+</body>
+
+</html>
