@@ -6,18 +6,15 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top  bg-light">
-            <a class="navbar-brand" href="index.html"><img src="images/dog.png">
-            </a>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+            <a class="navbar-brand" href="index.html"><img class="img-brand" src="/assets/dog.png"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarList" aria-controls="navbarList" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarList">
-                <div class="navbar-nav ml-auto align-items-end">
-                    <a class="nav-item nav-link active" href="index.html">Home<span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="people.html">People</a>
-                    <a class="nav-item nav-link" href="tools.html">Tools</a>
-                    <a class="nav-item nav-link" href="gallery.html">Gallery</a>
+                <div class="navbar-nav ml-auto nav-pills align-items-end">
+                    <%=link_to 'Sign Up', new_dog_path, {:class => "nav-item nav-link"} %>
+                    <%=link_to 'Log In', login_path, {:class => "nav-item nav-link"} %>
                 </div>
             </div>
         </nav>
