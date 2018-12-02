@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_18_212145) do
+ActiveRecord::Schema.define(version: 2018_12_02_220726) do
 
   create_table "dogs", force: :cascade do |t|
     t.string "email"
@@ -22,14 +22,15 @@ ActiveRecord::Schema.define(version: 2018_11_18_212145) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.integer "matches"
   end
 
   create_table "matches", force: :cascade do |t|
-    t.string "message"
-    t.integer "dog_id"
+    t.integer "dogone"
+    t.integer "dogtwo"
+    t.integer "chat_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["dog_id"], name: "index_matches_on_dog_id"
   end
 
 end

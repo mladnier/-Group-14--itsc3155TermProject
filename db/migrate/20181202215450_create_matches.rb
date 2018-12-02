@@ -1,8 +1,9 @@
 class CreateMatches < ActiveRecord::Migration[5.2]
   def change
     create_table :matches do |t|
-      t.string :message
-      t.references :dog, foreign_key: true
+      t.integer :dogone
+      t.integer :dogtwo
+      t.integer :chat_id
 
       t.timestamps
     end
