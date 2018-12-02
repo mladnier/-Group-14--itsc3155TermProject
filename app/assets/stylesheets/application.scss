@@ -17,7 +17,8 @@
  @import "bootstrap";
  
  body {
-     padding-top: 70px;
+     padding-top: 80px;
+     background: #f7f7ff;
  }
  
 input[type=text]{
@@ -52,14 +53,23 @@ input[type=button], input[type=submit]{
 }
 
 .nav-link {
-    margin: 0 px 5px;
+    margin: 5px 5px;
     // margin-top: 0px;
     // margin-bottom: 27px;
-    background:  rgb(199, 170, 9);
+    background:  #fe5f55;
     /* border-radius: 25%; */
     /* color: white; */
     /* padding-top: 30px; */
     vertical-align: top;
     // width: 65px;
     text-align: center;
+}
+
+.navvy {
+    background: #495867;
+}
+
+.nameplate {
+    font-family: 'Kaushan Script', cursive;
+    color: #fe5f55;
 }
