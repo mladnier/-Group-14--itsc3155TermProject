@@ -1,7 +1,7 @@
-class MatchController < ApplicationController
+class MatchesController < ApplicationController
     
     def index
-        @dog = Dog.find(params[:dog_id])  
+        
     end
     
     def new
