@@ -2,6 +2,7 @@ class MatchesController < ApplicationController
     
     def index
        @mycurrentmatch = Dog.find_by_id(1+rand(Dog.count))
+       
        @mymatchid = @mycurrentmatch.id
        @currentdog = Dog.find_by(@current_user_id)
        @matches = @currentdog.matches
@@ -10,8 +11,8 @@ class MatchesController < ApplicationController
     
     
     def create
-        @dog = Dog.find_by(@current_user_id)
-        @match = @dog.matches.create(match_params)
+        @dog = Dog.find(params[:dog_id])
+        @match = @dog.matches.create(:dog_id => @mymatchid )
         @match.save
         redirect_to dog_matches_path(params[:dog_id])
         
@@ -43,7 +44,7 @@ class MatchesController < ApplicationController
 
 private
     def match_params
-        params.permit(:dog_id, :id)
+        params.permit(:dog_id)
     end 
    
 end
