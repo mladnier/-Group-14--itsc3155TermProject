@@ -10,7 +10,7 @@ class MatchesController < ApplicationController
              @mymatchid = @mycurrentmatch.id
             
              break if @mymatchid != @currentdogid && !(Match.exists?(:dogtwo => @mymatchid ))
-            
+
         end
     
     end
@@ -19,10 +19,13 @@ class MatchesController < ApplicationController
     
     def create 
         @match = Match.create(match_params)
-        @match.save
+       if @match.save
         redirect_to dog_matches_path
         
+       else
+        render 'new'
        
+       end
     end
    
     
