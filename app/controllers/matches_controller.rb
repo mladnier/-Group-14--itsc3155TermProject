@@ -45,12 +45,12 @@ class MatchesController < ApplicationController
     
     
     def create 
-        @match = Match.new(match_params)
-        @match.dogone = @currentdogid
-        @match.dogtwo = @mymatchid
-        @match.save!
-        redirect_to dog_matches_path
-        
+        @match = Match.create(match_params)
+        if @match.save
+            redirect_to dog_matches_path
+         else
+        render 'index'
+        end
     end
     
    

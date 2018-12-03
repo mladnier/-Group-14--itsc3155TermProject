@@ -1,4 +1,5 @@
 class DogsController < ApplicationController
+
     
     def index
          
@@ -21,7 +22,7 @@ class DogsController < ApplicationController
     end
     
     def show
-        @dog = Dog.find(params[:id])
+        @dog = Dog.find(@current_user.id)
     end
     
 end
