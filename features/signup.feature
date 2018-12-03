@@ -9,5 +9,3 @@ Scenario: As a user I want to be able to navigate from the homepage to the new u
   Then I should be on the "Creating New Dog Profile!" page
   And I should see the "Email" field
   And I should see the "Password" field
-
-
