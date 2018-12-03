@@ -26,7 +26,7 @@
     
     
 </p> 
-<p> <%= link_to "Add match", dog_matches_path(:dog_id => @mycurrentmatch.id), :method => :post %><p>
+<p> <%= link_to "Add the Match", dog_matches_path(dogone: @currentdogid, dogtwo: @mymatchid), method: :post %><p>
 <p><%= link_to 'Find a different dogger friend', dog_matches_path(:current_user_id) %></p>
 
  

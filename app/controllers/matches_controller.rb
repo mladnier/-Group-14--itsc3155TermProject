@@ -8,12 +8,13 @@ class MatchesController < ApplicationController
        
        @mymatchid = @mycurrentmatch.id
        @currentdog = Dog.find_by(@current_user_id)
-       @matches = @currentdog.matches
-       @matchids = @currentdog.match_ids
+       @currentdogid =  @currentdog.id
+       
     end
     
     def create 
-        
+        @match = Match.create(match_params)
+        @match.save
     end
    
     
@@ -22,13 +23,13 @@ class MatchesController < ApplicationController
     end
     
     def show
-        
+    
     end
 
 
 private
     def match_params
-        params.permit(:matchone, :matchtwo)
+        params.permit(:dogone, :dogtwo)
     end 
    
 end
