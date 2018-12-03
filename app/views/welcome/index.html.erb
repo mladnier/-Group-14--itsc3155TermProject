@@ -12,12 +12,24 @@
     </header>
     <div class="container-fluid">
         <div class="row">
-            <div class="offset-1"></div>
-            <div class="col-4">
+            <!--<div class="offset-1"></div>-->
+            <div class="offset-1 col-4">
                 <div class="card-body intro-card">
                     <h3 class="card-title">Your perfect play date is waiting</h3>
-                    <p class="card-text">Doggr is the number 1 doggy dating site in IT</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <p class="card-text">No bones about it, Doggr is the number 1 doggy dating site in ITSC-3155!</p>
+                    <p class="card-text">Tens of eligible doggy bachelors and bachelorettes have found their soulmates through Doggr.</p>
+                    <h3 class="card-title">It's not just puppy-love</h3>
+                    <p class="card-text">Cycle through other users and click "Match" to let them know you're interested. When they match back, start chatting!</p>
+                    <p class="card-text">Stop wasting time barking up the wrong tree - Let Doggr help you find the right one for right now.</p>
+                    <%=link_to 'Get Started Now!!', new_dog_path, {:class => "btn btn-primary"} %>
+                </div>
+                
+            </div>
+            <div class="offset-1 col-6">
+                <div class="card-body carousel-card">
+                    <h3 class="card-title text-center">We're Pawsitive You'll Find the One</h3>
+                    <%= carousel_for(['/assets/carousel/dog1.jpg', '/assets/carousel/dog2.jpg', '/assets/carousel/dog3.jpg']) %>
+
                 </div>
             </div>
         </div>
