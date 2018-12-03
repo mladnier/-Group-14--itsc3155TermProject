@@ -1,0 +1,11 @@
+<%= form_for @chat url: {controller: 'chat', action: 'create'} do |f| %>
+  <p>
+    <%= f.label :messages %><br>
+    <%= f.text_area :messages %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+

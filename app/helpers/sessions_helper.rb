@@ -7,7 +7,7 @@ module SessionsHelper
     if session[:dog_id]
       @current_dog ||= Dog.find_by(id: session[:dog_id])
     end
-  end
+    end
   
   def log_out
     session.delete(:dog_id)

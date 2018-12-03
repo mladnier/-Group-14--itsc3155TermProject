@@ -7,6 +7,8 @@ class MatchesController < ApplicationController
        @currentdogid =  @currentdog.id
        @pervousmatches = Match.all
        
+     
+       
     #   Match.select("dogtwo").where(dogone = '@currentdogid')
        
     #   Match.where(dogtwo: = @currentdogid)
@@ -21,13 +23,32 @@ class MatchesController < ApplicationController
          
             break if @temp > @count      
         end
+        
+
+        
+          @mymatched = Array.new
+      
+       @pervousmatches.each do |f|
+                if f.dogone = @current_user_id
+                    @pervousmatches.each do |x|
+                       if x.dogtwo = @current_user_id
+                           @mymatched.push(x)
+                        
+                       end
+                 end
+                end
+                
+    end
+        
     
     end
     
     
     def create 
-        @match = Match.create(match_params)
-        @match.save
+        @match = Match.new(match_params)
+        @match.dogone = @currentdogid
+        @match.dogtwo = @mymatchid
+        @match.save!
         redirect_to dog_matches_path
         
     end
