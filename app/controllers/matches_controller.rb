@@ -5,13 +5,21 @@ class MatchesController < ApplicationController
        
        @currentdog = Dog.find_by(@current_user_id)
        @currentdogid =  @currentdog.id
-       @pervousmatches = Match.where(dogtwo: @currentdogid)
+       @pervousmatches = Match.all
+       
+    #   Match.select("dogtwo").where(dogone = '@currentdogid')
+       
+    #   Match.where(dogtwo: = @currentdogid)
+       @count = Dog.count
+       @temp = 0
        loop do 
-             @mycurrentmatch = Dog.find_by_id(1+rand(Dog.count))
+          @temp = @temp+1
+             @mycurrentmatch = Dog.find_by_id(1+rand(@count))
              @mymatchid = @mycurrentmatch.id
             
             break if @mymatchid != @currentdogid && !(Match.exists?(:dogtwo => @mymatchid ))
          
+            break if @temp > @count      
         end
     
     end

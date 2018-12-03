@@ -1,4 +1,5 @@
 class Dog < ApplicationRecord
+  
   serialize :addresses, Array
   has_many :matches, dependent: :destroy
   before_save { email.downcase! }

@@ -40,10 +40,11 @@
 <p><%= link_to 'Find a different dogger friend', dog_matches_path(:current_user_id) %></p>
 
 
-  <p><%= @pervousmatches.find_each do |f| %></p>
- 
-  <p><%= @dog = Dog.find(f.dogtwo) %></p>
-    <tr>
+  <p><%= @pervousmatches.each do |f| %></p>
+  
+     
+      <p hidden ><%= @dog = Dog.find_by_id(f.dogtwo) %></p>
+      <tr>
       <td><%= @dog.name %></td>
       <td><%= link_to 'Chat', new_dog_match_chat_path(:match_id => f.id) %></td>
       <td><%= link_to 'Unmatch',
@@ -53,10 +54,4 @@
     </tr>
     </tr>
   <% end %>
-
 </p>
-
-
-
-
- 
