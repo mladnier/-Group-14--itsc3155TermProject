@@ -13,18 +13,18 @@ class MatchesController < ApplicationController
        
     #   Match.where(dogtwo: = @currentdogid)
        @count = Dog.count
-       @temp = 0
+       @i = 0 
        loop do 
-          @temp = @temp+1
-             @mycurrentmatch = Dog.find_by_id(1+rand(@count))
+          
+             @mycurrentmatch = Dog.find_by_id(1+rand(Dog.count))
              @mymatchid = @mycurrentmatch.id
             
             break if @mymatchid != @currentdogid && !(Match.exists?(:dogtwo => @mymatchid ))
-         
-            break if @temp > @count      
+            break if @i > @count
+            
+            @i = @i+1
         end
-        
-
+      
         
           @mymatched = Array.new
       

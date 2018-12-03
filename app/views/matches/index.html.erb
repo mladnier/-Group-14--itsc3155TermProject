@@ -29,9 +29,9 @@
       </p>
       
      <h2>Your Matchs</h2>
-  <p><%= @mymatched.each do |f| %></p>
+  <p><% @pervousmatches.each do |f| %></p>
     
-      <p hidden ><%= @dog = Dog.find_by_id(f.dogtwo) %></p>
+      <p hidden ><%= @dog = Dog.find_by(:id =>f.dogtwo) %></p>
       <tr>
       <td><%= @dog.name %></td>
       <td><%= link_to 'Chat', dog_match_chats_path(:match_id => f.id) %></td>
