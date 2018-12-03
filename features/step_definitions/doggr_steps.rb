@@ -13,3 +13,4 @@ end
 Then(/^I should see the "([^\"]*)" field$/) do |field_name|
   expect(page).to have_field(field_name)
 end
+
