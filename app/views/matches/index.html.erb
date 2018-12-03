@@ -1,36 +1,29 @@
-<h2>You are being Matched!</h2>
-
-
-<h1> YOU HAVE A Possible MATCH!</h1>
-
-<p>
-    <strong>Name:</strong>
-    <%= @mycurrentmatch.name %>
-</p>  
-
-<p>
-      <strong>Sex:</strong>
-    <%= @mycurrentmatch.sex %>
-    
-</p> 
-
-<p>
-      <strong>Age:</strong>
-    <%= @mycurrentmatch.age %>
-    
-</p> 
-
-<p>
-      <strong>Bio:</strong>
-    <%= @mycurrentmatch.bio %>
-    
-    
-</p> 
-<p> <%= link_to "Add the Match", dog_matches_path(dogone: @currentdogid, dogtwo: @mymatchid), method: :post %><p>
-<p><%= link_to 'Find a different dogger friend', dog_matches_path(:current_user_id) %></p>
-
- 
-  
-  
-</table>
-</p>
+<!DOCTYPE html>
+<html>
+   <body>
+      <%= render 'layouts/navbar' %>
+      <h2>You are being Matched!</h2>
+      <h1> YOU HAVE A Possible MATCH!</h1>
+      <p>
+         <strong>Name:</strong>
+         <%= @mycurrentmatch.name %>
+      </p>
+      <p>
+         <strong>Sex:</strong>
+         <%= @mycurrentmatch.sex %>
+      </p>
+      <p>
+         <strong>Age:</strong>
+         <%= @mycurrentmatch.age %>
+      </p>
+      <p>
+         <strong>Bio:</strong>
+         <%= @mycurrentmatch.bio %>
+      </p>
+      <p> <%= link_to "Add the Match", dog_matches_path(dogone: @currentdogid, dogtwo: @mymatchid), method: :post %>
+      <p>
+      <p><%= link_to 'Find a different dogger friend', dog_matches_path(:current_user_id) %></p>
+      </table>
+      </p>
+   </body>
+</html>

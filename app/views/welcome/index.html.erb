@@ -5,7 +5,7 @@
 
 </head>
 
-<body>
+<body class="index-page">
     <%= render 'layouts/navbar' %>
     <header>
         
@@ -21,13 +21,13 @@
                     <h3 class="card-title">It's not just puppy-love</h3>
                     <p class="card-text">Cycle through other users and click "Match" to let them know you're interested. When they match back, start chatting!</p>
                     <p class="card-text">Stop wasting time barking up the wrong tree - Let Doggr help you find the right one for right now.</p>
-                    <%=link_to 'Get Started Now!!', new_dog_path, {:class => "btn btn-primary"} %>
+                    <%=link_to 'Get Started Now!!', new_dog_path, {:class => "btn signup-btn btn-primary"} %>
                 </div>
                 
             </div>
             <div class="offset-1 col-6">
                 <div class="card-body carousel-card">
-                    <h3 class="card-title text-center">We're Pawsitive You'll Find the One</h3>
+                    <h3 class="card-title text-center">We're Pawsitive You'll Find <span class="color-text">the One</span></h3>
                     <%= carousel_for(['/assets/carousel/dog1.jpg', '/assets/carousel/dog2.jpg', '/assets/carousel/dog3.jpg']) %>
 
                 </div>

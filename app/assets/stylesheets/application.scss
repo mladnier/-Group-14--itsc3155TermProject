@@ -48,6 +48,16 @@ input[type=button], input[type=submit]{
     cursor: pointer;
 }
 
+.navbar-light .navbar-nav .nav-link {
+    color: #f7f7ff;
+}
+
+.index-page {
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .img-brand {
     height: 50px;
     width: 50px;
@@ -64,6 +74,7 @@ input[type=button], input[type=submit]{
     vertical-align: top;
     // width: 65px;
     text-align: center;
+    color: #f7f7ff;
 }
 
 .navvy {
@@ -83,6 +94,7 @@ input[type=button], input[type=submit]{
 
 .intro-card {
     margin-top: 100px;
+    color: #f7f7ff;
 }
 
 
@@ -94,20 +106,45 @@ input[type=button], input[type=submit]{
 
 .carousel-card {
     margin-top: 25px;
+    color: #f7f7ff;
 }
 
 .carousel-item {
-    opacity: .5;
+    // opacity: .75;
     margin: auto;
+}
+
+.carousel-item > img {
+    margin-left: 25px;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1.0), rgba(0,0,0,.5));
+    border-radius: 5%;
 }
 
 .slide {
     margin: auto;
+    border-radius: 5%;
+
 }
 
 .active {
     width: 100%;
-    max-height: 427px;
+    // max-height: 427px;
+    border-radius: 5%;
+
 }
 
+.color-text {
+    color: #fe5f55;
+    text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #db473f , 0 0 70px #db473f , 0 0 80px #db473f , 0 0 100px #db473f ;
+}
+
+.signup-btn {
+    background: #fe5f55;
+    border: 2px solid #495867;
+}
+
+.signup-btn:hover {
+    background: #db473f;
+    border: 2px solid #bdd5ea;
+}
 

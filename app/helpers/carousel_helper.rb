@@ -26,6 +26,7 @@ module CarouselHelper
     def slide_tag(image, is_active)
       options = {
         class: (is_active ? 'carousel-item active' : 'carousel-item'),
+        interval: (3000)
       }
 
       content_tag(:div, image_tag(image), options)
