@@ -5,8 +5,9 @@ Feature: Sign Up
   
 Scenario: As a user I want to be able to navigate from the homepage to the new user form
   Given I am on the home page
-  When I click on the "Get Started Now" link
+  When I click on the "Get Started Now!!" link
   Then I should be on the "Creating New Dog Profile!" page
   And I should see the "Email" field
   And I should see the "Password" field
+
 
