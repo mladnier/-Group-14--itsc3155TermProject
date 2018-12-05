@@ -14,3 +14,7 @@ Then(/^I should see the "([^\"]*)" field$/) do |field_name|
   expect(page).to have_field(field_name)
 end
 
+
+Given("I am on the {string} page") do |page_name|
+  visit login_path
+end
